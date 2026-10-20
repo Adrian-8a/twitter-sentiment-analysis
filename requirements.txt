@@ -1,0 +1,10 @@
+joblib
+matplotlib
+nltk
+numpy
+pandas
+regex
+scikit-learn
+spacy
+tqdm
+notebook
