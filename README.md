@@ -22,16 +22,16 @@ The CSV files are not included in the repo. Download them from Kaggle and place 
 
 ## Results
 
-On the validation set (999 tweets after cleaning). The numbers and the notebook outputs come from the original run; the later fixes do not change them (same label encoding, same lemmas).
+On the validation set (999 tweets after cleaning):
 
 | Model | Accuracy | Macro F1 |
 |---|---|---|
-| Logistic Regression | 0.84 | 0.84 |
+| Logistic Regression | 0.85 | 0.85 |
 | Decision Tree | 0.91 | 0.91 |
 | Random Forest | **0.95** | **0.95** |
 | Majority vote | **0.95** | **0.95** |
 
-**Note:** the training set contains several variations of the same tweet (rows that share the same tweet id), and validation tweets may be similar to training tweets. A split grouped by tweet id would give a more conservative estimate.
+**Data leakage warning:** the training set contains 6 variations of each tweet (rows that share the same tweet id). Every tweet id in the validation set also appears in the training set, and 52% of the validation texts appear word for word in the training set. These scores therefore overestimate performance on unseen tweets; a split grouped by tweet id would give a more realistic estimate.
 
 ## How to run
 
